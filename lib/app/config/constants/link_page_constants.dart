@@ -1,2 +1,2 @@
-const String downloadUrlDev = "";
-const String downloadUrlProd = "";
+const String downloadUrlDev = "https://adiyusuf.com";
+const String downloadUrlProd = "https://adiyusuf.com";

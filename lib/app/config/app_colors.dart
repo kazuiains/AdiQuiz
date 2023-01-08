@@ -57,4 +57,8 @@ class AppColors {
   );
 
   static Color bodyColor = const Color(0xff142850);
+
+  static Color semiGrayColor = const Color(0xFFC7C7C7);
+
+  static Color overlayWhite = const Color(0x1AFFFFFF);
 }
