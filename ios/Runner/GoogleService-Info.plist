@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>971853036785-rghf898htf3cm7o69uv0ejceh4v1qj7b.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.971853036785-rghf898htf3cm7o69uv0ejceh4v1qj7b</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDRsfrlNkbNP6qIQf0IFmnFixKa8fbVkj4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>971853036785</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.adiyusuf.adiQuiz</string>
+	<key>PROJECT_ID</key>
+	<string>quizappadi</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quizappadi.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:971853036785:ios:f7cac5d5396ef78a09bd50</string>
+</dict>
+</plist>

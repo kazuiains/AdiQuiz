@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "971853036785",
+    "project_id": "quizappadi",
+    "storage_bucket": "quizappadi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971853036785:android:a45a772c863a90ce09bd50",
+        "android_client_info": {
+          "package_name": "com.adiyusuf.adi_quiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971853036785-31qpvjgl7n4f135hrq667n9ttd0ba18s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWnNE9AHVWhQRKRzeMYbzGVfDQOdKN32o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971853036785-31qpvjgl7n4f135hrq667n9ttd0ba18s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "971853036785-rghf898htf3cm7o69uv0ejceh4v1qj7b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.adiyusuf.adiQuiz"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
