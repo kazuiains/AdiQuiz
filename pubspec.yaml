@@ -43,8 +43,8 @@ dependencies:
   #PathProvider
   path_provider: ^2.0.11
 
-  #flutter native splash
-  flutter_native_splash: ^2.2.9
+  #easy loading
+  flutter_easyloading: ^3.0.5
 
   # firebase dependencies
   firebase_core: ^2.4.1
