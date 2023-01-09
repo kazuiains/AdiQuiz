@@ -1,5 +1,6 @@
 class AppStrings {
   static const String loading = "Loading...";
+  static const String defaultNullValue = "-";
 
   static const String titleHome = "Flutter Quiz App";
   static const String subTitleHome = "Learn • Take Quiz • Repeat";

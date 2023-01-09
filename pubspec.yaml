@@ -43,11 +43,21 @@ dependencies:
   #Shere to Social Media
   share_plus: ^6.3.0
 
+  #Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
   #PathProvider
   path_provider: ^2.0.11
 
   #easy loading
   flutter_easyloading: ^3.0.5
+
+  #easy refresh
+  flutter_easyrefresh: ^2.2.2
+
+  #Url Launcher
+  url_launcher: ^6.1.5
 
   # firebase dependencies
   firebase_core: ^2.4.1
