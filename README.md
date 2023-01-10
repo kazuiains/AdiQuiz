@@ -1,16 +1,21 @@
-# adi_quiz
+# Adi Quiz
 
-project teknikal test
+    Aplikasi bertema Edukasi. Aplikasi quiz dengan berbagai macam topic.
 
-## Getting Started
+## Apa yang terdapat di project ini?
 
-This project is a starting point for a Flutter application.
+Clean Architecture dengan menggunakan data firebase firestore, menggunakan state management Getx, dan menerapkan TDD. 
 
-A few resources to get you started if this is your first Flutter project:
+# Screenshot Aplikasi :
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+[![screen](https://drive.google.com/open?id=1HNeCVO1bsW3yfHy18A5EW7txeEf7OyIc&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[![screen](https://drive.google.com/open?id=1HLKiXqYwkpBqeyNwfggv7Hv2Bc-8JSWp&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+
+[![screen](https://drive.google.com/open?id=1HG_3Je1D7w9QAtrEox857jDTdO4Fz2VU&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+
+[![screen](https://drive.google.com/open?id=1HDHQ2cs0vqhVs5ki5P2HAPaOL0RDJGtf&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+
+[![screen](https://drive.google.com/open?id=1H18Z5rPyHBmCiOvlC1vQgkjUuRUr1-I-&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+
+[![screen](https://drive.google.com/open?id=1H-h4sgvwuV0wdgFoa8Kq8DzoZ_q6N1j-&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
