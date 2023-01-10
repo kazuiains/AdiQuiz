@@ -9,6 +9,7 @@ class AppBarStyles {
   static normalAppbar({
     String? title,
     List<Widget>? action,
+    VoidCallback? onBack,
   }) {
     return AppBar(
       titleSpacing: 0,
@@ -21,7 +22,7 @@ class AppBarStyles {
           Icons.chevron_left,
           size: 36,
         ),
-        onPressed: () => Get.back(),
+        onPressed: onBack ?? () => Get.back(),
         color: Colors.white,
       ),
       centerTitle: true,

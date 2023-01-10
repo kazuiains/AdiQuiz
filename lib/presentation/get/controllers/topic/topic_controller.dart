@@ -13,6 +13,8 @@ class TopicController extends GetxController {
 
   final _listData = <Topic>[].obs;
 
+  final _isLoading = true.obs;
+
   @override
   void onReady() {
     super.onReady();
@@ -22,6 +24,7 @@ class TopicController extends GetxController {
   getList() async {
     var response = await listUseCase.execute();
     _listData.addAll(response);
+    _isLoading.value = false;
   }
 
   goToPlay({
@@ -39,4 +42,6 @@ class TopicController extends GetxController {
   }
 
   List<Topic> get listData => _listData;
+
+  bool get isLoading => _isLoading.value;
 }

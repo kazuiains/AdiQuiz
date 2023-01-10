@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:adi_quiz/app/config/app_strings.dart';
+import 'package:adi_quiz/app/config/routes/app_routes.dart';
 import 'package:adi_quiz/app/config/routes/arguments/base/base_page_arguments.dart';
 import 'package:adi_quiz/app/types/snack_bar_type.dart';
 import 'package:adi_quiz/domain/entities/question.dart';
@@ -66,6 +67,12 @@ class ResultController extends GetxController {
           snackBarType: SnackBarType.error,
         );
       },
+    );
+  }
+
+  goToHome() {
+    Get.offAllNamed(
+      AppRoutes.home,
     );
   }
 

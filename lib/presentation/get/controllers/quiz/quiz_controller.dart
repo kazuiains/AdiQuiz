@@ -33,6 +33,8 @@ class QuizController extends GetxController {
   final _correcting = false.obs;
   final _durationProgress = 0.0.obs;
 
+  final _isLoading = true.obs;
+
   @override
   void onReady() {
     super.onReady();
@@ -58,7 +60,11 @@ class QuizController extends GetxController {
 
     var response = await listUseCase.execute(topic);
     _listData.addAll(response);
-    _setQuestion();
+    _isLoading.value = false;
+
+    if (response.isNotEmpty) {
+      _setQuestion();
+    }
   }
 
   _setQuestion() {
@@ -200,4 +206,6 @@ class QuizController extends GetxController {
   bool get correcting => _correcting.value;
 
   double get durationProgress => _durationProgress.value;
+
+  bool get isLoading => _isLoading.value;
 }

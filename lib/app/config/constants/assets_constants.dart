@@ -7,4 +7,5 @@ class AssetsConstants {
   static const String iconLight = "${icons}light.png";
   static const String iconShare = "${icons}share.png";
   static const String iconStar = "${icons}star.png";
+  static const String iconBox = "${icons}box.png";
 }

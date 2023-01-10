@@ -1,6 +1,8 @@
+import 'package:adi_quiz/app/config/app_colors.dart';
 import 'package:adi_quiz/app/config/app_dimens.dart';
 import 'package:adi_quiz/app/config/app_strings.dart';
 import 'package:adi_quiz/app/config/app_styles.dart';
+import 'package:adi_quiz/app/config/constants/assets_constants.dart';
 import 'package:adi_quiz/presentation/get/controllers/topic/topic_controller.dart';
 import 'package:adi_quiz/presentation/ui/widgets/space.dart';
 import 'package:flutter/material.dart';
@@ -13,35 +15,47 @@ class TopicPage extends GetView<TopicController> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => Scaffold(
-        appBar: AppBarStyles.normalAppbar(
-          title: AppStrings.topics,
-        ),
-        body: ListView.separated(
-          padding: const EdgeInsets.fromLTRB(
-            AppDimens.paddingAppBody,
-            AppDimens.paddingAppBody,
-            AppDimens.paddingAppBody,
-            AppDimens.paddingAppBody,
-          ),
-          scrollDirection: Axis.vertical,
-          physics: const BouncingScrollPhysics(
-            parent: AlwaysScrollableScrollPhysics(),
-          ),
-          separatorBuilder: (_, __) => Space.vSmall,
-          itemBuilder: (context, index) {
-            var data = controller.listData[index];
-            return TopicItemListView(
-              data: data.name,
-              onTap: () => controller.goToPlay(
-                data: data.id,
+    return Obx(() {
+      if (!controller.isLoading) {
+        if (controller.listData.isNotEmpty) {
+          return Scaffold(
+            appBar: AppBarStyles.normalAppbar(
+              title: AppStrings.topics,
+            ),
+            body: ListView.separated(
+              padding: const EdgeInsets.fromLTRB(
+                AppDimens.paddingAppBody,
+                AppDimens.paddingAppBody,
+                AppDimens.paddingAppBody,
+                AppDimens.paddingAppBody,
               ),
-            );
-          },
-          itemCount: controller.listData.length,
-        ),
-      ),
-    );
+              scrollDirection: Axis.vertical,
+              physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics(),
+              ),
+              separatorBuilder: (_, __) => Space.vSmall,
+              itemBuilder: (context, index) {
+                var data = controller.listData[index];
+                return TopicItemListView(
+                  data: data.name,
+                  onTap: () => controller.goToPlay(
+                    data: data.id,
+                  ),
+                );
+              },
+              itemCount: controller.listData.length,
+            ),
+          );
+        }
+      }
+      return Container(
+        color: AppColors.bodyColor,
+        alignment: Alignment.center,
+        padding: const EdgeInsets.all(AppDimens.paddingAppBody),
+        child: controller.isLoading
+            ? const CircularProgressIndicator()
+            : Image.asset(AssetsConstants.iconBox),
+      );
+    });
   }
 }
