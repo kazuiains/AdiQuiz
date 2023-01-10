@@ -1,4 +1,5 @@
 import 'package:adi_quiz/app/config/routes/app_routes.dart';
+import 'package:adi_quiz/app/config/routes/arguments/base/base_page_arguments.dart';
 import 'package:adi_quiz/domain/entities/topic.dart';
 import 'package:adi_quiz/domain/usecases/list_topic_use_case.dart';
 import 'package:get/get.dart';
@@ -29,6 +30,10 @@ class TopicController extends GetxController {
     if (data != null) {
       Get.toNamed(
         AppRoutes.quiz,
+        arguments: BasePageArguments(
+          isSelectedTopic: true,
+          topicId: data,
+        ),
       );
     }
   }

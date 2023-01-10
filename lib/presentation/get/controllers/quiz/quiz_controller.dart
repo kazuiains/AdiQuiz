@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class QuizController extends GetxController {
+  final _arguments = BasePageArguments().obs;
+
   QuizController({
     required this.listUseCase,
   });
@@ -47,7 +49,14 @@ class QuizController extends GetxController {
   getList({
     String? topic,
   }) async {
-    var response = await listUseCase.execute("topic1");
+    String? topic;
+    _arguments.value = Get.arguments;
+    if (_arguments.value.isSelectedTopic != null &&
+        _arguments.value.isSelectedTopic!) {
+      topic = _arguments.value.topicId;
+    }
+
+    var response = await listUseCase.execute(topic);
     _listData.addAll(response);
     _setQuestion();
   }

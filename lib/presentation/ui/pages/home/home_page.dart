@@ -88,7 +88,7 @@ class HomePage extends GetView<HomeController> {
                         InkWell(
                           overlayColor: MaterialStateProperty.all<Color>(
                               Colors.transparent),
-                          onTap: () {},
+                          onTap: () =>controller.onReview(),
                           child: Row(
                             children: [
                               Image.asset(
