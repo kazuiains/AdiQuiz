@@ -8,14 +8,14 @@ Clean Architecture dengan menggunakan data firebase firestore, menggunakan state
 
 # Screenshot Aplikasi :
 
-[![screen](https://drive.google.com/open?id=1HNeCVO1bsW3yfHy18A5EW7txeEf7OyIc&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+[![screen](https://i.postimg.cc/TY295NkX/Screenshot-2023-01-10-20-27-33-65-66c4b6d4212bd80fd763b441baa3c771.jpg)](https://github.com/kazuiains/AdiQuiz)
 
-[![screen](https://drive.google.com/open?id=1HLKiXqYwkpBqeyNwfggv7Hv2Bc-8JSWp&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+[![screen](https://i.postimg.cc/YChzbGKn/Screenshot-2023-01-10-20-27-36-80-66c4b6d4212bd80fd763b441baa3c771.jpg)](https://github.com/kazuiains/AdiQuiz)
 
-[![screen](https://drive.google.com/open?id=1HG_3Je1D7w9QAtrEox857jDTdO4Fz2VU&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+[![screen](https://i.postimg.cc/mDNYt7CD/Screenshot-2023-01-10-20-27-42-00-66c4b6d4212bd80fd763b441baa3c771.jpg)](https://github.com/kazuiains/AdiQuiz)
 
-[![screen](https://drive.google.com/open?id=1HDHQ2cs0vqhVs5ki5P2HAPaOL0RDJGtf&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+[![screen](https://i.postimg.cc/ydzh1LJt/Screenshot-2023-01-10-20-27-50-64-66c4b6d4212bd80fd763b441baa3c771.jpg)](https://github.com/kazuiains/AdiQuiz)
 
-[![screen](https://drive.google.com/open?id=1H18Z5rPyHBmCiOvlC1vQgkjUuRUr1-I-&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+[![screen](https://i.postimg.cc/W4Z6cB40/Screenshot-2023-01-10-20-27-55-00-66c4b6d4212bd80fd763b441baa3c771.jpg)](https://github.com/kazuiains/AdiQuiz)
 
-[![screen](https://drive.google.com/open?id=1H-h4sgvwuV0wdgFoa8Kq8DzoZ_q6N1j-&authuser=1&usp=drive_link)](https://github.com/kazuiains/AdiQuiz)
+[![screen](https://i.postimg.cc/NFs1TLkx/Screenshot-2023-01-10-20-28-12-23-66c4b6d4212bd80fd763b441baa3c771.jpg)](https://github.com/kazuiains/AdiQuiz)
