@@ -13,16 +13,17 @@ class QuizPage extends GetView<QuizController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBarStyles.quizAppbar(
-        title: AppStrings.titleQuiz,
-        onPressed: () => controller.goToHome(),
-      ),
-      body: Obx(
-        () {
-          String answer = controller.currentQuestion.answerKey ?? "";
-          String itemSelected = controller.selected;
-          return SingleChildScrollView(
+    return Obx(
+      () {
+        String answer = controller.currentQuestion.answerKey ?? "";
+        String itemSelected = controller.selected;
+        return Scaffold(
+          appBar: AppBarStyles.quizAppbar(
+            title: AppStrings.titleQuiz,
+            onPressed: () => controller.goToHome(),
+            value: controller.durationProgress,
+          ),
+          body: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
@@ -84,9 +85,9 @@ class QuizPage extends GetView<QuizController> {
                 ),
               ],
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

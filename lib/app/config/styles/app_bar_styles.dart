@@ -34,13 +34,38 @@ class AppBarStyles {
 
   static quizAppbar({
     String? title,
+    double? value,
     required VoidCallback onPressed,
   }) {
-    return normalAppbar(
-      title: title,
-      action: [
+    return AppBar(
+      titleSpacing: 0,
+      title: Text(
+        title ?? "",
+        style: TextStyles.labelWhite,
+      ),
+      leading: IconButton(
+        icon: const Icon(
+          Icons.chevron_left,
+          size: 36,
+        ),
+        onPressed: () => Get.back(),
+        color: Colors.white,
+      ),
+      centerTitle: true,
+      shadowColor: Colors.grey.withOpacity(0),
+      backgroundColor: AppColors.bodyColor,
+      elevation: 0,
+      actions: [
         BaseView.buildExitButton(onPressed: onPressed),
       ],
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(4.0),
+        child: LinearProgressIndicator(
+          backgroundColor: AppColors.progressBackgroundColor,
+          valueColor: AlwaysStoppedAnimation<Color>(AppColors.progressColor),
+          value: value ?? 0,
+        ),
+      ),
     );
   }
 }

@@ -1,3 +1,5 @@
 import 'package:get/get.dart';
 
-class ResultController extends GetxController {}
+class ResultController extends GetxController {
+
+}

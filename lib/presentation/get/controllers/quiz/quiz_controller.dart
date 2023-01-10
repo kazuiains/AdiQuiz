@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:adi_quiz/app/config/app_colors.dart';
 import 'package:adi_quiz/app/config/app_strings.dart';
 import 'package:adi_quiz/app/config/routes/app_routes.dart';
@@ -22,10 +24,23 @@ class QuizController extends GetxController {
   final _currentIndex = 0.obs;
   final _selected = "".obs;
 
+  Timer? _answerDuration;
+  Timer? _correctingDuration;
+  int remainingSeconds = 1;
+  final _correcting = false.obs;
+  final _durationProgress = 0.0.obs;
+
   @override
   void onReady() {
     super.onReady();
     getList();
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    _answerDuration?.cancel();
+    _correctingDuration?.cancel();
   }
 
   getList({
@@ -37,8 +52,10 @@ class QuizController extends GetxController {
   }
 
   _setQuestion() {
+    _selected.value = "";
     _currentQuestion.value = listData[currentIndex];
     _setOptionList();
+    _startAnswerDuration(30);
   }
 
   _setOptionList() {
@@ -48,6 +65,62 @@ class QuizController extends GetxController {
     options.add(currentQuestion.option3 ?? AppStrings.defaultNullValue);
     options.add(currentQuestion.option4 ?? AppStrings.defaultNullValue);
     _currentOptions.value = options;
+    _correcting.value = false;
+  }
+
+  _startAnswerDuration(int seconds) {
+    const duration = Duration(seconds: 1);
+    remainingSeconds = seconds;
+    _durationProgress.value = 0;
+    _answerDuration?.cancel();
+
+    _answerDuration = Timer.periodic(duration, (Timer timer) {
+      if (remainingSeconds == 0) {
+        timer.cancel();
+        _nextAndSubmitQuestion();
+      } else {
+        _durationProgress.value += 0.0333333333333333;
+        remainingSeconds--;
+      }
+    });
+  }
+
+  _nextAndSubmitQuestion({
+    String? data,
+  }) {
+    _answerDuration?.cancel();
+    _correcting.value = true;
+
+    _currentIndex.value = currentIndex + 1;
+    _selected.value = data ?? "";
+    _listSelected.add(data ?? AppStrings.defaultNullValue);
+
+    if (currentIndex < listData.length) {
+      _answerCorrection(isFinish: false);
+    } else {
+      _answerCorrection(isFinish: true);
+    }
+  }
+
+  _answerCorrection({
+    required bool isFinish,
+  }) {
+    const duration = Duration(seconds: 1);
+    int remaining = 1;
+
+    _correctingDuration = Timer.periodic(duration, (Timer timer) {
+      if (remaining == 0) {
+        timer.cancel();
+
+        if (isFinish) {
+          _goToResult();
+        } else {
+          _setQuestion();
+        }
+      } else {
+        remaining--;
+      }
+    });
   }
 
   goToHome() {
@@ -56,13 +129,25 @@ class QuizController extends GetxController {
     );
   }
 
+  _goToResult() {
+    // print("listData: ${listData.length}");
+    // for (var i in listData) {
+    //   print("listData: ${i.answerKey}");
+    // }
+    // print("listDataSelected: ${listSelected.length}");
+    // for (var i in listSelected) {
+    //   print("listData: $i");
+    // }
+    Get.offNamed(
+      AppRoutes.result,
+    );
+  }
+
   onSelect({
     String? data,
   }) {
-    if (data != null) {
-      _currentIndex.value = currentIndex + 1;
-      _selected.value = data;
-      _listSelected.add(data);
+    if (data != null && !correcting) {
+      _nextAndSubmitQuestion(data: data);
     }
   }
 
@@ -97,4 +182,8 @@ class QuizController extends GetxController {
   int get currentIndex => _currentIndex.value;
 
   String get selected => _selected.value;
+
+  bool get correcting => _correcting.value;
+
+  double get durationProgress => _durationProgress.value;
 }
