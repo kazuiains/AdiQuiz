@@ -1,4 +1,5 @@
 import 'package:adi_quiz/app/config/app_colors.dart';
+import 'package:adi_quiz/app/config/app_dimens.dart';
 import 'package:flutter/material.dart';
 
 class ButtonStyles {
@@ -48,4 +49,39 @@ class ButtonStyles {
       ),
     ),
   );
+
+  static buttonModalYesNo({
+    Color? rippleColor,
+    double height = 48,
+  }) {
+    return ButtonStyle(
+      padding: MaterialStateProperty.all(
+        const EdgeInsets.all(16),
+      ),
+      backgroundColor: MaterialStateProperty.all(
+        Colors.white,
+      ),
+      minimumSize: MaterialStateProperty.all(
+        Size(
+          kMinInteractiveDimension,
+          height,
+        ),
+      ),
+      overlayColor: MaterialStateProperty.all<Color>(
+        rippleColor ?? Colors.black12,
+      ),
+      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(
+              AppDimens.roundedSmall,
+            ),
+          ),
+          side: BorderSide(
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
 }

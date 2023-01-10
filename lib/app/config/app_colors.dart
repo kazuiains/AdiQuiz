@@ -64,6 +64,9 @@ class AppColors {
   static Color wrongColor = const Color(0xffF44336);
   static Color correctColor = const Color(0xff447B60);
 
+  static Color errorColor = const Color(0xffC6392A);
+  static Color warningColor = const Color(0xffFF9800);
+
   static Color progressColor = const Color(0xffFDD083);
   static Color progressBackgroundColor = const Color(0xff27496D);
 }

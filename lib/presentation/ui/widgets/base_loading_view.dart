@@ -1,4 +1,5 @@
 import 'package:adi_quiz/app/config/app_colors.dart';
+import 'package:adi_quiz/app/config/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
@@ -21,7 +22,7 @@ class BaseLoadingView {
   }
 
   static show({
-    String? text,
+    String text = AppStrings.loading,
   }) async {
     await EasyLoading.show(
       status: text,

@@ -50,6 +50,9 @@ dependencies:
   #PathProvider
   path_provider: ^2.0.11
 
+  #ScreenShot
+  screenshot: ^1.3.0
+
   #easy loading
   flutter_easyloading: ^3.0.5
 
