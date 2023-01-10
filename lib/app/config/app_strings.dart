@@ -12,4 +12,8 @@ class AppStrings {
 
   static const String titleQuiz = "Quiz Page";
   static const String exit = "Exit";
+
+  static const String titleResult = "Your Score";
+  static const String shareScore = "Share your score";
+  static const String yourReport = "Your Report";
 }

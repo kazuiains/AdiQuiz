@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:adi_quiz/app/config/app_colors.dart';
 import 'package:adi_quiz/app/config/app_strings.dart';
 import 'package:adi_quiz/app/config/routes/app_routes.dart';
+import 'package:adi_quiz/app/config/routes/arguments/base/base_page_arguments.dart';
 import 'package:adi_quiz/domain/entities/question.dart';
 import 'package:adi_quiz/domain/usecases/list_question_use_case.dart';
 import 'package:flutter/material.dart';
@@ -130,16 +131,20 @@ class QuizController extends GetxController {
   }
 
   _goToResult() {
-    // print("listData: ${listData.length}");
-    // for (var i in listData) {
-    //   print("listData: ${i.answerKey}");
-    // }
-    // print("listDataSelected: ${listSelected.length}");
-    // for (var i in listSelected) {
-    //   print("listData: $i");
-    // }
+    double score = 0;
+    for (var i = 0; i < listData.length; i++) {
+      if (listData[i].answerKey == listSelected[i]) {
+        score = score + 1;
+      }
+    }
+
     Get.offNamed(
       AppRoutes.result,
+      arguments: BasePageArguments<List<Question>, List<String>>(
+        data: listData,
+        answer: listSelected,
+        score: score,
+      ),
     );
   }
 

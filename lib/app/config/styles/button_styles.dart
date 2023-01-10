@@ -35,4 +35,17 @@ class ButtonStyles {
       AppColors.primary,
     ),
   );
+
+  static ButtonStyle buttonFullColorSquareRounded = buttonFullColor.copyWith(
+    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          4.0,
+        ),
+        side: const BorderSide(
+          color: AppColors.primary,
+        ),
+      ),
+    ),
+  );
 }

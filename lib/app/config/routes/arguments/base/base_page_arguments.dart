@@ -1,7 +1,7 @@
 class BasePageArguments<T, S> {
   bool? isSelectedTopic;
   String? topicId;
-  int? score;
+  double? score;
   T? data;
   S? answer;
 
