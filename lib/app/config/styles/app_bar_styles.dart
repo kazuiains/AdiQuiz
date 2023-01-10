@@ -1,4 +1,5 @@
 import 'package:adi_quiz/app/config/app_colors.dart';
+import 'package:adi_quiz/presentation/ui/widgets/base_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +8,7 @@ import 'text_styles.dart';
 class AppBarStyles {
   static normalAppbar({
     String? title,
+    List<Widget>? action,
   }) {
     return AppBar(
       titleSpacing: 0,
@@ -26,6 +28,19 @@ class AppBarStyles {
       shadowColor: Colors.grey.withOpacity(0),
       backgroundColor: AppColors.bodyColor,
       elevation: 0,
+      actions: action,
+    );
+  }
+
+  static quizAppbar({
+    String? title,
+    required VoidCallback onPressed,
+  }) {
+    return normalAppbar(
+      title: title,
+      action: [
+        BaseView.buildExitButton(onPressed: onPressed),
+      ],
     );
   }
 }

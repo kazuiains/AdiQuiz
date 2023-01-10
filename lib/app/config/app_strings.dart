@@ -9,4 +9,7 @@ class AppStrings {
   static const String share = "Share";
   static const String rate = "Rate US";
   static const String downloadApkDescription = "Ayo download Adi Quiz aplikasi mencerdaskan bangsa yang mengalahkan aplikasi zeus judi online. anda dapat download di ";
+
+  static const String titleQuiz = "Quiz Page";
+  static const String exit = "Exit";
 }

@@ -60,4 +60,7 @@ class AppColors {
   static Color semiGrayColor = const Color(0xFFC7C7C7);
   static Color itemListColor = const Color(0xff193469);
   static Color overlayWhite = const Color(0x1AFFFFFF);
+
+  static Color wrongColor = const Color(0xffF44336);
+  static Color correctColor = const Color(0xff447B60);
 }

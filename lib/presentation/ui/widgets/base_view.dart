@@ -1,4 +1,6 @@
 import 'package:adi_quiz/app/config/app_dimens.dart';
+import 'package:adi_quiz/app/config/app_strings.dart';
+import 'package:adi_quiz/app/config/styles/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class BaseView {
@@ -6,11 +8,12 @@ class BaseView {
     required List<Widget> children,
     GestureTapCallback? onTap,
     Color? color,
+    double? radius,
   }) {
     return ClipRRect(
-      borderRadius: const BorderRadius.all(
+      borderRadius: BorderRadius.all(
         Radius.circular(
-          AppDimens.roundedMedium,
+          radius ?? AppDimens.roundedMedium,
         ),
       ),
       child: Card(
@@ -19,7 +22,7 @@ class BaseView {
         margin: const EdgeInsets.all(0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
-            AppDimens.roundedMedium,
+            radius ?? AppDimens.roundedMedium,
           ),
         ),
         child: InkWell(
@@ -33,6 +36,36 @@ class BaseView {
               children: children,
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  static buildExitButton({
+    required VoidCallback onPressed,
+  }) {
+    return Container(
+      margin: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+      child: TextButton(
+        style: ButtonStyle(
+          padding: MaterialStateProperty.all(
+            const EdgeInsets.symmetric(
+              horizontal: 0,
+              vertical: 0,
+            ),
+          ),
+          minimumSize: MaterialStateProperty.all(
+            const Size(
+              kMinInteractiveDimension,
+              36,
+            ),
+          ),
+          overlayColor: MaterialStateProperty.all<Color>(Colors.black12),
+        ),
+        onPressed: onPressed,
+        child: Text(
+          AppStrings.exit,
+          style: TextStyles.labelSmall,
         ),
       ),
     );

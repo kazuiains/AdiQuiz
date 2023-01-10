@@ -1,3 +1,6 @@
+import 'package:adi_quiz/data/repositories/quiz_repository_impl.dart';
+import 'package:adi_quiz/data/repositories/topic_repository_impl.dart';
+import 'package:adi_quiz/domain/usecases/list_question_use_case.dart';
 import 'package:adi_quiz/presentation/get/controllers/quiz/quiz_controller.dart';
 import 'package:get/get.dart';
 
@@ -7,10 +10,22 @@ class QuizBinding extends Bindings {
     _dependencyCreator();
     _useCasePage();
 
-    Get.put(QuizController());
+    Get.put(QuizController(
+      listUseCase: Get.find<ListQuestionUseCase>(),
+    ));
   }
 
-  _dependencyCreator() {}
+  _dependencyCreator() {
+    Get.lazyPut(() => QuizRepositoryImpl());
+    Get.lazyPut(() => TopicRepositoryImpl());
+  }
 
-  _useCasePage() {}
+  _useCasePage() {
+    Get.lazyPut(
+      () => ListQuestionUseCase(
+        repo: Get.find<QuizRepositoryImpl>(),
+        topicRepo: Get.find<TopicRepositoryImpl>(),
+      ),
+    );
+  }
 }
