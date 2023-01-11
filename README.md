@@ -1,6 +1,6 @@
 # Adi Quiz
 
-    Aplikasi bertema Edukasi. Aplikasi quiz dengan berbagai macam topic.
+    Aplikasi bertema Edukasi. Aplikasi quiz dengan berbagai macam topic. anda bisa mencobanya dengan mendownload di https://drive.google.com/open?id=1BeXuB30z_XtIBpb06XAtCQPQK06bTZLG&authuser=1&usp=drive_link
 
 ## Apa yang terdapat di project ini?
 
